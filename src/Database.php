@@ -3,6 +3,7 @@
 class Database
 {
     public $connexion;
+    public $statement;
     public function __construct()
     {
 
@@ -11,7 +12,7 @@ class Database
         try {
             $this->connexion = new PDO('mysql:host=mariadb;dbname=blog', 'root', 'root', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
 
-            echo 'Connexion ok';
+            echo 'Connexion ok. ';
 
             //dd($connexion);
         } catch (PDOException $e) {
@@ -22,7 +23,15 @@ class Database
     {
         $statement = $this->connexion->prepare($query);
         $statement->execute($param);
-        return $statement;
+        return $this;
     }
+    public function find()
+    {
+        return $this->statement->fetch();
+    }
+public function findAll()
+{
+    return $this->statement->fetchALL();
+}
 }
 ?>

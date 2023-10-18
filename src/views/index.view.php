@@ -2,7 +2,7 @@
 include 'partials/header.php';
  ?>
 <main>
-<h1>Website for cooking recipes</h1>
+<h2><?=$heading?></h2>
 <main>
 
 <?php

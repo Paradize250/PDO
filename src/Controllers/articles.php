@@ -5,7 +5,7 @@ require './Database.php';
 
 
 $db = new Database();
-$articles = $db->query('SELECT * from post')->fetchAll(PDO::FETCH_ASSOC);
+$articles = $db->query('SELECT * from post')->findAll();
 //include 'views/index.view.php';
 include './views/articles.view.php';
 echo '</br>';
