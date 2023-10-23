@@ -4,34 +4,38 @@ class Database
 {
     public $connexion;
     public $statement;
+
     public function __construct()
     {
-
-
-        //this is used to create a connection between the database and its contents to our php file to be able to use the contents or call them
         try {
             $this->connexion = new PDO('mysql:host=mariadb;dbname=blog', 'root', 'root', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
-
-            echo 'Connexion ok. ';
-
-            //dd($connexion);
+            echo 'Connection successful.';
         } catch (PDOException $e) {
-            exit('Connection error:' . $e);
+            exit('Connection error: ' . $e->getMessage());
         }
     }
-    public function query($query, $param =[])
+
+    public function query($query, $params = [])
     {
-        $statement = $this->connexion->prepare($query);
-        $statement->execute($param);
+        $this->statement = $this->connexion->prepare($query);
+        $this->statement->execute($params);
         return $this;
     }
+
     public function find()
     {
-        return $this->statement->fetch();
+        if ($this->statement) {
+            return $this->statement->fetch();
+        }
+        return null; // Handle the case where statement is not set
     }
-public function findAll()
-{
-    return $this->statement->fetchALL();
-}
+
+    public function findAll()
+    {
+        if ($this->statement) {
+            return $this->statement->fetchAll();
+        }
+        return null; // Handle the case where statement is not set
+    }
 }
 ?>

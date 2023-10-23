@@ -1,6 +1,6 @@
 <?php
 //include '../fonctions/index.php';
-require './fonctions/index.php';
+
 require './Database.php';
 
 
@@ -10,6 +10,7 @@ $articles = $db->query('SELECT * from post')->findAll();
 include './views/articles.view.php';
 echo '</br>';
 
+//------------------------------------------------------------------------------------------------------------------
 
 class Person
 {
