@@ -13,13 +13,14 @@
     <ul>
         <?php foreach ($model['articles'] as $article): ?>
             <li>
+                <?php echo $article['id'] ?>
                 <a href="/article?id=<?= $article['id'] ?>">
                     <?= $article['titre'] ?>
                 </a>
             </li>
         <?php endforeach; ?>
     </ul>
-
+<p><a href="/article-new">add a new recipe</a></p>
 </body>
 
 </html>
