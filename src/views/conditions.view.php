@@ -1,4 +1,4 @@
-<?php include 'partials/header.php'; ?>
+<h2><?= $model; ?></h2>
 <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur animi suscipit obcaecati laboriosam, voluptatibus
     dolorem voluptas minus alias porro laudantium atque expedita placeat recusandae ex et quis maxime quibusdam vero
     officia. Temporibus ullam praesentium, consequuntur minus doloremque voluptatum aut quaerat corrupti assumenda sint
@@ -20,6 +20,3 @@
     consequuntur, cumque dolor impedit aspernatur maiores ducimus sequi harum! Earum voluptatum nemo saepe aliquid optio
     nostrum soluta quos labore, rem placeat inventore ipsum numquam est ipsa, sequi omnis eos ratione. Autem,
     accusantium?</P>
-<?php
-include 'partials/footer.php';
-?>

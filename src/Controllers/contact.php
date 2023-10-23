@@ -1,2 +1,3 @@
 <?php
-include './views/contact.view.php';
+$heading = 'contact';
+view('contact',$heading);

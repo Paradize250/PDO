@@ -1,3 +1,3 @@
 <?php
-include './views/conditions.view.php';
-?>
+$heading = 'Website for cooking recipes';
+view('conditions', $heading);

@@ -1,14 +1,31 @@
 <?php
-//include '../fonctions/index.php';
-
-require './Database.php';
-
-
+require 'Database.php';
 $db = new Database();
 $articles = $db->query('SELECT * from post')->findAll();
 //include 'views/index.view.php';
-include './views/articles.view.php';
+$heading = 'Recipes List';
+view(
+    'articles',
+    [
+        'heading' => $heading,
+        'articles' => $articles
+    ]
+);
 echo '</br>';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //------------------------------------------------------------------------------------------------------------------
 
@@ -41,4 +58,3 @@ $articles = $connexion->query('SELECT * from post')->fetchAll(PDO::FETCH_ASSOC);
 //dd($articles);
 
 ?>
-

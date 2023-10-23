@@ -9,7 +9,7 @@ class Database
     {
         try {
             $this->connexion = new PDO('mysql:host=mariadb;dbname=blog', 'root', 'root', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
-            echo 'Connection successful.';
+            //echo 'Connection successful.';
         } catch (PDOException $e) {
             exit('Connection error: ' . $e->getMessage());
         }

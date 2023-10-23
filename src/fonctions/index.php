@@ -12,7 +12,10 @@ function dd($value) {
     dbug($value);
     die("Script arrété !!!!");
 }
-
+function view(string $name, string | array $model) {
+    //dbug('test');
+    return require 'views/layout.view.php';
+}
 // Fonctions
 
 // function calcul(int $a,int $b): int
