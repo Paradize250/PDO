@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +19,10 @@
             </li>
         <?php endforeach; ?>
     </ul>
-<p><a href="/article-new">add a new recipe</a></p>
+    <p><a href="/article-new">add a new recipe</a></p>
+
+    
+
 </body>
 
 </html>

@@ -10,7 +10,8 @@ return [
     '/article-delete' => './controllers/article-delete.php',
     '/article-update' => './controllers/article-update.php',
     '/contact' => './controllers/contact.php',
-    '/conditions' => './controllers/conditions.php'
+    '/conditions' => './controllers/conditions.php',
+    '/admin' => './controllers/admin.php'
 ];
 
 ?>

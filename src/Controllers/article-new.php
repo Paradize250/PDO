@@ -2,7 +2,10 @@
 require 'Database.php';
 $db = new Database;
 $heading = "New Recipe";
+$userReq = 'SELECT * FROM user';
+$users = $db->query($userReq)->findAll();
 
+dd($users);
 
 $titre = $content = $errors = '';
 //dbug($_POST);

@@ -7,12 +7,13 @@
         value="<?=$model['titre']?>"
     <?php endif; ?>
     >
-    <label for="contenu">Recette :</label>
-    <textarea name="contenu" id="contenu" cols="30" rows="10">
-    <?php if ( isset( $model['contenu'] ) ) : ?>
-        <?=$model['contenu']?>
+    <label for="content">Recette :</label>
+    <textarea name="content" id="content" cols="30" rows="10"><?php if ( isset( $model['content'] ) ) : ?><?=$model['content']?>
     <?php endif; ?>
     </textarea>
+
+    <textarea name="content" id="content" cols="30" rows="10"><?php ( isset( $model['content'] ) ) ? $model['content']: '' ?> </textarea>
+
     <input type="submit" value="Modifier">
     </form>
         <?php

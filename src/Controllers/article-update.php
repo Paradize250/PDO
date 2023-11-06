@@ -20,22 +20,29 @@ $titre = $content = $errors = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'):
     $errors = [];
+    $titre =cleanData($_POST['titre']);
+    $content = cleanData($_POST['content']);
+    
     
     if (strlen($titre) === 0):
         $errors[] = 'title field empty';
     endif;
-
-
+    if (strlen($titre) >= 50):
+        $errors[] = 'title too big';
+    endif;
     if (strlen($content) === 0):
-        $errors[] = 'content field empty';
+        $errors[] = 'content empty';
+    endif;
+    if (strlen($content) === 1000):
+        $errors[] = 'content too big';
     endif;
 
 
     if ( empty($errors) ) :
-        $db->query('UPDATE post SET titre = :titre , contenu = :contenu WHERE id = :id' , [
+        $db->query('UPDATE post SET titre = :titre , content = :content WHERE id = :id' , [
             'id' => $id,
             'titre' => $titre,
-            'contenu' => $contenu
+            'content' => $content
         ]
         );
         header('Location: /articles');
